@@ -1,15 +1,15 @@
-https://github.com/user-attachments/assets/2ceb33e3-2675-4e50-a852-79e9be460d7b
-
-<img width="490" alt="Image" src="https://github.com/user-attachments/assets/e0402dda-101a-4c9a-a678-101932692851" />
-<img width="490" alt="Image" src="https://github.com/user-attachments/assets/cda8e8c8-0610-4ebf-a9a8-b160c6da3c87" />
-<img width="490" alt="Image" src="https://github.com/user-attachments/assets/2a045118-01ad-4db6-a4c1-49a86ccfe1ee" />
-<img width="490" alt="Image" src="https://github.com/user-attachments/assets/3bd06c35-4a65-41c5-98d6-224d5062bd64" />
-
 # ChainTix: Secret Code Minting System for Polkadot Asset Hub
 
 ChainTix uses a three-contract modular system to manage the minting of secret-code-based digital collectibles (POAPs) on Polkadot Asset Hub.
 
 Each component is optimized for gas-efficiency, security, and scalability, while staying within Polkadot’s 49 KB contract deployment limit.
+
+https://github.com/user-attachments/assets/2ceb33e3-2675-4e50-a852-79e9be460d7b
+
+<img width="245" alt="Image" src="https://github.com/user-attachments/assets/e0402dda-101a-4c9a-a678-101932692851" />
+<img width="245" alt="Image" src="https://github.com/user-attachments/assets/cda8e8c8-0610-4ebf-a9a8-b160c6da3c87" />
+<img width="245" alt="Image" src="https://github.com/user-attachments/assets/2a045118-01ad-4db6-a4c1-49a86ccfe1ee" />
+<img width="245" alt="Image" src="https://github.com/user-attachments/assets/3bd06c35-4a65-41c5-98d6-224d5062bd64" />
 
 ---
 
