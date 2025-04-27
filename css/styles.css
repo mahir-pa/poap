@@ -1,0 +1,783 @@
+/* Base Styles */
+:root {
+  --primary-color: #6c5ce7;
+  --primary-light: #a29bfe;
+  --secondary-color: #fd79a8;
+  --text-color: #f7f7f7;
+  --background-color: #121212;
+  --card-color: #1e1e1e;
+  --error-color: #d63031;
+  --success-color: #00b894;
+  --warning-color: #fdcb6e;
+  --border-color: #333;
+  --muted-color: #666;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+}
+
+/* Layout */
+.app-container {
+  display: flex;
+  min-height: 100vh;
+}
+
+.navbar {
+  width: 64px;
+  background-color: #0a0a0a;
+  border-right: 1px solid var(--border-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 24px 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 10;
+}
+
+.navbar-logo {
+  margin-bottom: 32px;
+}
+
+.logo-circle {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.navbar-links {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.nav-link {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #666;
+  transition: all 0.2s ease;
+}
+
+.nav-link:hover {
+  background-color: rgba(108, 92, 231, 0.2);
+  color: var(--primary-color);
+}
+
+.nav-link.active {
+  background-color: rgba(108, 92, 231, 0.3);
+  color: white;
+}
+
+.main-content {
+  flex: 1;
+  margin-left: 64px;
+  padding: 24px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Home Page */
+.concert-bg {
+  background-image: url('../images/concert-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  min-height: calc(100vh - 48px);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.concert-bg::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 1;
+}
+
+.concert-bg .container {
+  position: relative;
+  z-index: 2;
+  max-width: 500px;
+}
+
+.card {
+  background-color: var(--card-color);
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card-header {
+  padding: 30px 20px;
+  text-align: center;
+  background: linear-gradient(135deg, var(--primary-color), var(--primary-light));
+  color: white;
+  position: relative;
+}
+
+.poap-badge {
+  width: 80px;
+  height: 80px;
+  background-color: var(--secondary-color);
+  border-radius: 50%;
+  margin: 0 auto 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  animation: pulse 2s infinite;
+}
+
+.poap-inner {
+  width: 60px;
+  height: 60px;
+  background-color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.poap-inner:before {
+  content: "POAP";
+  font-weight: bold;
+  color: var(--primary-color);
+  font-size: 14px;
+}
+
+h1 {
+  margin-bottom: 10px;
+  font-size: 28px;
+}
+
+.subtitle {
+  font-size: 14px;
+  opacity: 0.9;
+}
+
+.card-body {
+  padding: 30px 20px;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+input {
+  padding: 15px;
+  border: 2px solid #2d3436;
+  border-radius: 8px;
+  font-size: 16px;
+  transition: border-color 0.3s;
+  background-color: #2d3436;
+  color: white;
+}
+
+input:focus {
+  outline: none;
+  border-color: var(--primary-color);
+}
+
+button {
+  padding: 15px;
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+button:hover {
+  background-color: var(--primary-light);
+}
+
+button:active {
+  transform: scale(0.98);
+}
+
+button:disabled {
+  background-color: #4a4a4a;
+  cursor: not-allowed;
+}
+
+.status {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 15px;
+  font-size: 14px;
+}
+
+.status-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.disconnected {
+  background-color: var(--error-color);
+}
+
+.connected {
+  background-color: var(--success-color);
+}
+
+.pending {
+  background-color: var(--warning-color);
+}
+
+.message {
+  text-align: center;
+  min-height: 20px;
+  font-size: 14px;
+  padding: 10px;
+  border-radius: 8px;
+  margin-top: 10px;
+  display: none;
+}
+
+.message.error {
+  background-color: rgba(255, 0, 0, 0.1);
+  color: var(--error-color);
+  display: block;
+}
+
+.message.success {
+  background-color: rgba(0, 255, 0, 0.1);
+  color: var(--success-color);
+  display: block;
+}
+
+.message.pending {
+  background-color: rgba(253, 203, 110, 0.1);
+  color: var(--warning-color);
+  display: block;
+}
+
+.card-footer {
+  padding: 15px 20px;
+  background-color: #2a2a2a;
+  border-top: 1px solid #333;
+  text-align: center;
+  font-size: 14px;
+}
+
+/* Collectibles Page */
+.collectibles-container, .rewards-container {
+  padding-top: 24px;
+}
+
+.page-header {
+  margin-bottom: 32px;
+}
+
+.gradient-text {
+  background: linear-gradient(to right, var(--primary-light), var(--secondary-color));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  font-size: 32px;
+  margin-bottom: 8px;
+}
+
+.text-secondary {
+  color: #999;
+}
+
+.wallet-connect-card {
+  background-color: #1a1a1a;
+  border-radius: 16px;
+  padding: 32px;
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.wallet-icon {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 24px;
+}
+
+.wallet-status {
+  background-color: rgba(26, 26, 26, 0.5);
+  border-radius: 12px;
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 32px;
+}
+
+.wallet-status-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: rgba(108, 92, 231, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 16px;
+}
+
+.status-badge {
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  background-color: rgba(0, 184, 148, 0.2);
+  color: var(--success-color);
+  margin-left: auto;
+}
+
+.nft-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 24px;
+}
+
+.nft-card {
+  background-color: #1a1a1a;
+  border-radius: 16px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid #333;
+}
+
+.nft-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(108, 92, 231, 0.2);
+  border-color: var(--primary-color);
+}
+
+.nft-image {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  background-color: #2d3436;
+}
+
+.nft-content {
+  padding: 16px;
+}
+
+.nft-title {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.nft-info {
+  display: flex;
+  align-items: center;
+  color: #999;
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+
+.nft-info .icon {
+  width: 16px;
+  height: 16px;
+  margin-right: 4px;
+}
+
+.nft-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 12px;
+}
+
+.nft-badge {
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+}
+
+.badge-rare {
+  background-color: rgba(108, 92, 231, 0.2);
+  color: var(--primary-light);
+}
+
+.badge-epic {
+  background-color: rgba(253, 121, 168, 0.2);
+  color: var(--secondary-color);
+}
+
+.badge-common {
+  background-color: rgba(9, 132, 227, 0.2);
+  color: #0984e3;
+}
+
+.nft-link {
+  color: var(--primary-color);
+  font-size: 12px;
+  text-decoration: none;
+}
+
+.nft-link:hover {
+  text-decoration: underline;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 64px 0;
+  background-color: rgba(26, 26, 26, 0.5);
+  border-radius: 16px;
+  border: 1px solid #333;
+}
+
+.empty-icon {
+  width: 64px;
+  height: 64px;
+  margin: 0 auto 16px;
+  color: #666;
+}
+
+.empty-title {
+  font-size: 20px;
+  margin-bottom: 8px;
+}
+
+.empty-description {
+  color: #999;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+/* Rewards Page */
+.progress-card {
+  background-color: rgba(26, 26, 26, 0.5);
+  border-radius: 16px;
+  padding: 24px;
+  margin-bottom: 32px;
+}
+
+.progress-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.progress-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 16px;
+}
+
+.progress-bar-container {
+  height: 8px;
+  background-color: #2d3436;
+  border-radius: 4px;
+  overflow: hidden;
+  margin-bottom: 8px;
+}
+
+.progress-bar-fill {
+  height: 100%;
+  background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+  border-radius: 4px;
+  transition: width 0.5s ease;
+}
+
+.progress-stats {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  margin-bottom: 16px;
+}
+
+.tier-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.tier-card {
+  background-color: rgba(45, 52, 54, 0.5);
+  border-radius: 8px;
+  padding: 12px;
+  text-align: center;
+}
+
+.tier-label {
+  color: #999;
+  font-size: 12px;
+  margin-bottom: 4px;
+}
+
+.tier-value {
+  font-weight: 600;
+}
+
+.rewards-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 16px;
+}
+
+.rewards-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.reward-card {
+  background-color: #1a1a1a;
+  border-radius: 16px;
+  padding: 24px;
+  border: 1px solid #333;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.reward-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(108, 92, 231, 0.2);
+  border-color: var(--primary-color);
+}
+
+.reward-header {
+  display: flex;
+  margin-bottom: 16px;
+}
+
+.reward-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 16px;
+  flex-shrink: 0;
+}
+
+.reward-content {
+  flex: 1;
+}
+
+.reward-title {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 4px;
+}
+
+.reward-description {
+  color: #999;
+  font-size: 14px;
+  margin-bottom: 16px;
+}
+
+.reward-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.reward-progress {
+  display: flex;
+  align-items: center;
+}
+
+.reward-progress-text {
+  font-size: 14px;
+  margin-right: 8px;
+}
+
+.reward-progress-bar {
+  width: 64px;
+  height: 8px;
+  background-color: #2d3436;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.reward-progress-fill {
+  height: 100%;
+  background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+  border-radius: 4px;
+  transition: width 0.5s ease;
+}
+
+.reward-button {
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+}
+
+.reward-button.locked {
+  background-color: #2d3436;
+  color: #666;
+  cursor: not-allowed;
+}
+
+.reward-button.unlocked {
+  background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+  color: white;
+}
+
+.reward-button .icon {
+  width: 16px;
+  height: 16px;
+  margin-left: 4px;
+}
+
+/* Animations */
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(108, 92, 231, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 15px rgba(108, 92, 231, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(108, 92, 231, 0);
+  }
+}
+
+.confetti {
+  position: fixed;
+  top: -10px;
+  z-index: 999;
+  pointer-events: none;
+}
+
+.loading-spinner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 64px 0;
+}
+
+.spinner {
+  width: 48px;
+  height: 48px;
+  border: 4px solid rgba(108, 92, 231, 0.3);
+  border-top-color: var(--primary-color);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 16px;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .tier-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .nft-grid {
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  }
+  
+  .reward-header {
+    flex-direction: column;
+  }
+  
+  .reward-icon {
+    margin-bottom: 16px;
+    margin-right: 0;
+  }
+  
+  .reward-footer {
+    flex-direction: column;
+    gap: 16px;
+  }
+  
+  .reward-progress {
+    width: 100%;
+    justify-content: space-between;
+  }
+  
+  .reward-button {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .main-content {
+    padding: 16px;
+  }
+  
+  .card-header {
+    padding: 20px 15px;
+  }
+  
+  .card-body {
+    padding: 20px 15px;
+  }
+  
+  h1 {
+    font-size: 24px;
+  }
+  
+  .poap-badge {
+    width: 70px;
+    height: 70px;
+  }
+  
+  .poap-inner {
+    width: 50px;
+    height: 50px;
+  }
+}
