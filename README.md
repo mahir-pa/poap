@@ -120,7 +120,7 @@ This smart contract architecture ensures that only real event attendees can mint
 
 Blocklink : https://blockscout-asset-hub.parity-chains-scw.parity.io/address/0x16E5BA2A5713E036B2dd10BA1c5861728FAb6D23?tab=contract
 
-Website has been published at : mahir-pa.github.io/poap
+Website has been published at : https://mahir-pa.github.io/poap
 
 
 
