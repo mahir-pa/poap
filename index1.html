@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Concert NFT Platform</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/ethers@5.7.2/dist/ethers.umd.min.js"></script>
+
+  <style>
+    body {
+      background: url('./Screenshot\ 2025-04-27\ at\ 4.27.41\ AM.png') center/cover no-repeat fixed;
+      background-color: #0e0e0e;
+      margin: 0;
+      padding: 0;
+      font-family: 'Inter', sans-serif;
+    }
+
+    .main-content {
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 40px 20px;
+    }
+
+    .card {
+      background: rgba(30, 30, 30, 0.8); /* slightly translucent */
+      backdrop-filter: blur(6px);
+      border-radius: 16px;
+      padding: 32px;
+      max-width: 450px;
+      width: 100%;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="app-container">
+    <!-- Navbar -->
+    <nav class="navbar">
+      <div class="navbar-logo">
+        <div class="logo-circle">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon">
+            <path d="M9 18V5l12-2v13"></path>
+            <circle cx="6" cy="18" r="3"></circle>
+            <circle cx="18" cy="16" r="3"></circle>
+          </svg>
+        </div>
+      </div>
+
+      <div class="navbar-links">
+        <a href="index.html" class="nav-link active" title="Home">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon">
+            <path d="M20 12V8H6a2 2 0 1 1 0-4h12v4"></path>
+            <path d="M20 12V8H6a2 2 0 1 1 0-4h12v4"></path>
+            <path d="M20 12v4H6a2 2 0 1 0 0 4h12v-4"></path>
+          </svg>
+        </a>
+
+        <a href="collectibles.html" class="nav-link" title="Collectibles">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon">
+            <path d="M9 18V5l12-2v13"></path>
+            <circle cx="6" cy="18" r="3"></circle>
+            <circle cx="18" cy="16" r="3"></circle>
+          </svg>
+        </a>
+
+        <a href="rewards.html" class="nav-link" title="Rewards">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon">
+            <path d="M12 2v6.5l3-3"></path>
+            <path d="M12 2v6.5l-3-3"></path>
+            <path d="M7 10.5v4.2c0 1.68 0 2.52.327 3.162a3 3 0 0 0 1.311 1.311C9.28 19.5 10.12 19.5 11.8 19.5h.4c1.68 0 2.52 0 3.162-.327a3 3 0 0 0 1.311-1.311c.327-.642.327-1.482.327-3.162v-4.2"></path>
+            <path d="M5 10.5h14"></path>
+          </svg>
+        </a>
+      </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <div class="card">
+        <div class="card-header">
+          <div class="poap-badge">
+            <div class="poap-inner"></div>
+          </div>
+          <h1>Get your Token!</h1>
+          <p class="subtitle">Enter the secret word to claim your collectible</p>
+        </div>
+
+        <div class="card-body">
+          <div class="input-group">
+            <input type="text" id="secretInput" placeholder="Enter Secret Word">
+            <button id="claimButton">Connect Wallet</button>
+          </div>
+
+          <div id="status" class="status">
+            <span id="statusText">Not connected</span>
+            <span id="statusDot" class="status-dot disconnected"></span>
+          </div>
+
+          <div id="message" class="message"></div>
+        </div>
+
+        <div class="card-footer">
+          <div id="contractStatus">Checking contract status...</div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
