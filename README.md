@@ -124,5 +124,9 @@ Blocklink : https://blockscout-asset-hub.parity-chains-scw.parity.io/address/0x1
 
 Website has been published at : https://mahir-pa.github.io/poap
 
+Presentation slides : https://www.canva.com/design/DAGlwOQ7U-k/3AZU1fcIiz6qfhmwpOQ-Hw/edit?utm_content=DAGlwOQ7U-k&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton
+
+Twitter thread : https://x.com/pramay07_/status/1916258393859248542
+
 
 
