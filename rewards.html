@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rewards - Concert NFT Platform</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/ethers@5.7.2/dist/ethers.umd.min.js"></script>
+
+  <style>
+    body {
+      background: url('./pexels-vishnurnair-1105666.jpg') center/cover no-repeat fixed;
+      background-color: #0e0e0e;
+      margin: 0;
+      padding: 0;
+      font-family: 'Inter', sans-serif;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="app-container">
+    <!-- Navbar -->
+    <nav class="navbar">
+      <div class="navbar-logo">
+        <div class="logo-circle">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon">
+            <path d="M9 18V5l12-2v13"></path>
+            <circle cx="6" cy="18" r="3"></circle>
+            <circle cx="18" cy="16" r="3"></circle>
+          </svg>
+        </div>
+      </div>
+      <div class="navbar-links">
+        <a href="index1.html" class="nav-link" title="Home">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon">
+            <path d="M20 12V8H6a2 2 0 1 1 0-4h12v4"></path>
+            <path d="M20 12v4H6a2 2 0 1 0 0 4h12v-4"></path>
+          </svg>
+        </a>
+        <a href="collectibles.html" class="nav-link" title="Collectibles">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon">
+            <path d="M9 18V5l12-2v13"></path>
+            <circle cx="6" cy="18" r="3"></circle>
+            <circle cx="18" cy="16" r="3"></circle>
+          </svg>
+        </a>
+        <a href="rewards.html" class="nav-link active" title="Rewards">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon">
+            <path d="M12 2v6.5l3-3"></path>
+            <path d="M12 2v6.5l-3-3"></path>
+            <path d="M7 10.5v4.2c0 1.68 0 2.52.327 3.162a3 3 0 0 0 1.311 1.311C9.28 19.5 10.12 19.5 11.8 19.5h.4c1.68 0 2.52 0 3.162-.327a3 3 0 0 0 1.311-1.311c.327-.642.327-1.482.327-3.162v-4.2"></path>
+            <path d="M5 10.5h14"></path>
+          </svg>
+        </a>
+      </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <div class="container collectibles-container">
+        <div class="page-header">
+          <h1 class="gradient-text">Your Rewards</h1>
+          <p class="text-secondary">Unlock exclusive merch based on concerts attended</p>
+        </div>
+
+        <div id="rewards-list" class="rewards-list" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px;">
+  
+          <!-- T-shirt reward card -->
+          <div class="reward-card" style="background:rgba(30,30,30,0.8); border-radius:16px; overflow:hidden; display:flex; flex-direction:column; align-items:center; padding:20px; text-align:center;">
+            <img src="./333.png" alt="Concert T-Shirt" style="width:100%; max-width:250px; object-fit:contain; margin-bottom:16px;">
+            <h2 style="color:white; margin-bottom:8px;">Concert T-Shirt</h2>
+            <p style="color:#aaa; font-size:14px; margin-bottom:16px;">Attend 5 concerts to unlock this exclusive T-shirt and become a proud supporter!</p>
+            <button class="reward-button locked" disabled>5/5 Concerts Needed</button>
+          </div>
+        
+          <!-- Hoodie reward card -->
+          <div class="reward-card" style="background:rgba(30,30,30,0.8); border-radius:16px; overflow:hidden; display:flex; flex-direction:column; align-items:center; padding:20px; text-align:center;">
+            <img src="./111.png" alt="Concert Hoodie" style="width:100%; max-width:250px; object-fit:contain; margin-bottom:16px;">
+            <h2 style="color:white; margin-bottom:8px;">Concert Hoodie</h2>
+            <p style="color:#aaa; font-size:14px; margin-bottom:16px;">Attend 10 concerts to unlock this limited edition hoodie and show your concert pride!</p>
+            <button class="reward-button locked" disabled>10/10 Concerts Needed</button>
+          </div>
+        
+        </div>
+        
+      </div>
+    </main>
+  </div>
+
+  <!-- Reward Popup -->
+  <div id="reward-popup" style="display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,0.6);backdrop-filter:blur(6px);align-items:center;justify-content:center;z-index:9999;">
+    <div id="reward-popup-content" style="background:white;padding:30px;border-radius:12px;max-width:400px;width:90%;text-align:center;box-shadow:0 8px 30px rgba(0,0,0,0.3);">
+      <!-- Popup content inserted dynamically -->
+    </div>
+  </div>
+
+  <script src="./js/rewards.js"></script>
+</body>
+</html>
